@@ -19,5 +19,14 @@ export const connectToDatabase = async () => {
     });
     //It either uses the existing promise stored in cached.promise or creates a new promise by calling mongoose.connect to establish a connection to the MongoDB database. The options passed to mongoose.connect include the database name ("planify") and disabling command buffering.
     cached.conn = await cached.promise;
+
+    //It awaits the resolution of the connection promise and stores the resulting connection in the cached.conn property.
     return cached.conn;
+    //Finally, it returns the MongoDB connection.
 }
+
+
+
+
+
+//In summary, this process is a reusable module that provides a function to connect to a MongoDB database using Mongoose. It incorporates caching to avoid redundant connection setups, and it throws an error if the MongoDB URI is not provided. The exported function returns a promise that resolves to the MongoDB connection.
