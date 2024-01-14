@@ -11,7 +11,7 @@ const Footer = () => {
             alt="logo" width={140} height={38} 
           />
         </Link>
-        <p>2023 PLANIFY. All Rights Reserved.</p>
+        <p className="text-sm font-bold text-gray-700">2023 PLANIFY. @All Rights Reserved.</p>
       </div>
    </footer>
   )
