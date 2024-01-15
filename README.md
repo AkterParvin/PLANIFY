@@ -1,7 +1,7 @@
 <div align="center">
   <br />
     <a href="" target="_blank">
-      <img src="./readme.gif" alt="Project Banner">
+      <img src="https://i.imgur.com/38ZzcmA.jpg" alt="Project Banner">
     </a>
   <br />
 
