@@ -37,3 +37,6 @@ const Event = models.Event || model("Event", EventSchema);
 
 export default Event;
 //this code sets up a Mongoose schema and model for an "Event" entity in a MongoDB database.It defines the structure of an event, including its properties and their types, and exports the corresponding Mongoose model for use in other parts of the application.
+
+
+//So now we have created a model and as well as a connection to our database.so let's create a function that is going to connect us to the database and then create a user or an event or anything really.suppose a user when creted by clerk will also connect with the database and it will update info about user collections for the application. and we can do so by creating a web hook.A webhook is a event trigger.so when something happens it triggers something else and make a request and then process that event.
