@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 0340f5455f71fdb2dda9384661c405c50933e003
 <div align="center">
   <br />
     <a href="" target="_blank">
@@ -73,4 +76,7 @@ and many more, including code architecture and reusability
 ## <a name="links">🔗 Links</a>
 
 Live Link of My Project is 👉 [here](https://)
+<<<<<<< HEAD
+>>>>>>> 0340f5455f71fdb2dda9384661c405c50933e003
+=======
 >>>>>>> 0340f5455f71fdb2dda9384661c405c50933e003
