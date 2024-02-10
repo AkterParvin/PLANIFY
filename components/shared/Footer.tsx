@@ -17,4 +17,5 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default Footer;
+//people are tired
