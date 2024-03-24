@@ -11,6 +11,13 @@ import { revalidatePath } from 'next/cache';
 // import { createUser } from './user.actions';
 
 //Here i have structured in a way that ensures that before any operation (create, read, update, delete) on a user is performed, the connection to the database is established. This approach is common in many server-side applications where it's necessary to establish a connection to the database before performing any database operation.
+//Before performing any database operation, each function calls the connectToDatabase() function to establish a connection.
+
+
+
+//====================================================Create
+//This function takes a user object as input, connects to the database, creates a new user using the User.create() method, and then returns the newly created user after converting it to JSON format.
+
 export const createUser = async (user: CreateUserParams) => {
     try {
         await connectToDatabase();
@@ -23,6 +30,7 @@ export const createUser = async (user: CreateUserParams) => {
 }
 
 //====================================================READ
+//This function retrieves a user by their ID. It first connects to the database, then finds the user by ID using User.findById(), and returns the user if found, otherwise throws an error.
 export async function getUserById(userId: string) {
     try {
         await connectToDatabase()
@@ -35,7 +43,9 @@ export async function getUserById(userId: string) {
         handleError(error)
     }
 }
-//====================================================
+//====================================================UPDATE
+//This function updates a user with the given clerkId using the provided user object. It connects to the database, finds the user by clerkId using User.findOneAndUpdate(), updates the user, and returns the updated user.
+
 export async function updateUser(clerkId: string, user: UpdateUserParams) {
     try {
         await connectToDatabase()
@@ -50,7 +60,9 @@ export async function updateUser(clerkId: string, user: UpdateUserParams) {
 }
 
 
-//====================================================
+//====================================================DELETE
+//This function deletes a user with the given clerkId. It connects to the database, finds the user by clerkId, unlinks relationships (removes references to the user from related entities), deletes the user, and then returns the deleted user.
+
 export async function deleteUser(clerkId: string) {
     try {
         await connectToDatabase()
@@ -75,6 +87,7 @@ export async function deleteUser(clerkId: string) {
         ])
 
         // Delete user
+        // After deleting a user, the function revalidatePath('/') is called, possibly for cache revalidation or any other application-specific purpose.
         const deletedUser = await User.findByIdAndDelete(userToDelete._id)
         revalidatePath('/')
 
